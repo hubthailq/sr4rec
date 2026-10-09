@@ -1,0 +1,18 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "SR4Rec",
+  "description": "A reproducible toolkit for measuring whether super-resolution helps closed-set image recognition, compared with bicubic upscaling.",
+  "version": "0.1.0",
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/hubthailq/sr4rec",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python >= 3.10, PyTorch >= 2.3",
+  "operatingSystem": ["Linux", "Windows", "macOS"],
+  "softwareRequirements": ["torch", "torchvision", "timm", "spandrel", "numpy", "pandas", "pillow", "pyyaml", "pydantic", "scipy", "statsmodels", "scikit-learn", "matplotlib", "jinja2"],
+  "keywords": ["super-resolution", "image recognition", "biometrics", "evaluation", "reproducibility"],
+  "author": [
+    {"@type": "Person", "givenName": "Thai", "familyName": "Le Quang", "@id": "https://orcid.org/0009-0006-6427-2162"},
+    {"@type": "Person", "givenName": "Vinh", "familyName": "Truong Hoang", "@id": "https://orcid.org/0000-0002-3464-3894"}
+  ]
+}

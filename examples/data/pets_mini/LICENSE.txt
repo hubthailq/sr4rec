@@ -1,0 +1,9 @@
+Images: Oxford-IIIT Pet Dataset, Visual Geometry Group, University of Oxford.
+https://www.robots.ox.ac.uk/~vgg/data/pets/
+The dataset page states that the dataset is available under the Creative Commons
+Attribution-ShareAlike 4.0 International license (CC BY-SA 4.0); check the page for the current
+terms. The resized subset built by scripts/make_examples.py is a derivative work under the same
+license. The SR4Rec source code is licensed separately (MIT).
+
+Citation: O. M. Parkhi, A. Vedaldi, A. Zisserman, C. V. Jawahar. Cats and Dogs. IEEE Conference on
+Computer Vision and Pattern Recognition (CVPR), 2012.

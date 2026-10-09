@@ -1,0 +1,5 @@
+Images: EarVN1.0 (V. T. Hoang, Data in Brief 27, 2019), Mendeley Data.
+The dataset page states that all rights are reserved and that commercial use and distribution are
+not permitted. SR4Rec therefore does not redistribute any EarVN1.0 image; the subset is rebuilt
+locally from your own copy with scripts/make_examples.py. Use it only under the terms of the
+official page.

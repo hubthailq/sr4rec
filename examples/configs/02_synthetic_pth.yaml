@@ -1,0 +1,36 @@
+# Example 02: SR models given as weight files, loaded with spandrel (method 1).
+# Run from the repository root:
+#   sr4rec run examples/configs/02_synthetic_pth.yaml --dry-run
+#   sr4rec run examples/configs/02_synthetic_pth.yaml
+# Expected time: 1-2 hours on a laptop CPU (SwinIR is slow on a CPU); a few minutes on a GPU.
+# Prepare first: download the four validated weight files into weights/ at the repository root
+# (links and SHA-256 in README.md, section "Adding SR models"), and build pets_mini:
+#   python scripts/make_examples.py --pets <path_to_oxford_iiit_pet>
+dataset: ../data/pets_mini
+mode: synthetic
+scale: 4
+protocol: matched
+sr:
+  - name: realesrgan
+    weights: ../../weights/RealESRGAN_x4plus.pth
+  - name: swinir_classical
+    weights: ../../weights/001_classicalSR_DIV2K_s48w8_SwinIR-M_x4.pth
+  - name: swinir_realworld
+    weights: ../../weights/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth
+  - name: span
+    weights: ../../weights/spanx4_ch48.pth
+recognizer:
+  backbones: [resnet18]
+  input_size: 128
+  seeds: [0]
+training:
+  epochs: 3
+  batch_size: 32
+  num_workers: 0
+latency:
+  lr_size: 64
+  threads: 2
+comparisons:
+  count: 6
+runtime:
+  output_dir: ../../runs

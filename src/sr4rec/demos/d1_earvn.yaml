@@ -1,0 +1,29 @@
+# SR4Rec demo definition: d1_earvn
+demo: d1_earvn
+description: 'D1 (main): EarVN1.0 ears, native-lr x4, matched, bicubic + 4 SR, ResNet-18, 3 seeds'
+defaults:
+  data_root: data
+  weights_root: weights
+notes: python scripts/prepare_earvn.py --earvn <path_to_EarVN1.0> --out data/earvn. Put the four validated SR weight
+  files in the weights folder (docs/adding_sr_models.md).
+config:
+  dataset: '{data_root}/earvn'
+  mode: native-lr
+  scale: 4
+  protocol: matched
+  sr:
+  - name: realesrgan
+    weights: '{weights_root}/RealESRGAN_x4plus.pth'
+  - name: swinir_classical
+    weights: '{weights_root}/001_classicalSR_DIV2K_s48w8_SwinIR-M_x4.pth'
+  - name: swinir_realworld
+    weights: '{weights_root}/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth'
+  - name: span
+    weights: '{weights_root}/spanx4_ch48.pth'
+  recognizer:
+    backbones:
+    - resnet18
+    seeds:
+    - 0
+    - 1
+    - 2

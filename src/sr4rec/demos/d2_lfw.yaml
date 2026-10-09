@@ -1,0 +1,31 @@
+# SR4Rec demo definition: d2_lfw
+demo: d2_lfw
+description: 'D2 (controlled): LFW faces (>= 20 images per person), synthetic x4, matched, ResNet-18, 3 seeds'
+defaults:
+  data_root: data
+  weights_root: weights
+notes: python scripts/prepare_lfw.py --lfw <path_to_lfw> --out data/lfw. Put the four validated SR weight files
+  in the weights folder (docs/adding_sr_models.md).
+config:
+  dataset: '{data_root}/lfw'
+  mode: synthetic
+  scale: 4
+  protocol: matched
+  sr:
+  - name: realesrgan
+    weights: '{weights_root}/RealESRGAN_x4plus.pth'
+  - name: swinir_classical
+    weights: '{weights_root}/001_classicalSR_DIV2K_s48w8_SwinIR-M_x4.pth'
+  - name: swinir_realworld
+    weights: '{weights_root}/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth'
+  - name: span
+    weights: '{weights_root}/spanx4_ch48.pth'
+  recognizer:
+    backbones:
+    - resnet18
+    seeds:
+    - 0
+    - 1
+    - 2
+  latency:
+    enabled: false

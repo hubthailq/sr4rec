@@ -1,0 +1,29 @@
+# Expected results of demo d1_earvn, frozen from reproduce_d1_earvn.
+demo: d1_earvn
+frozen: true
+metrics:
+- backbone: resnet18
+  method: bicubic
+  metric: rank1
+  value_pct: 77.9089
+  tolerance_pp: 0.99
+- backbone: resnet18
+  method: realesrgan
+  metric: rank1
+  value_pct: 79.2709
+  tolerance_pp: 0.99
+- backbone: resnet18
+  method: swinir_classical
+  metric: rank1
+  value_pct: 76.2592
+  tolerance_pp: 1.13
+- backbone: resnet18
+  method: swinir_realworld
+  metric: rank1
+  value_pct: 79.0067
+  tolerance_pp: 1.62
+- backbone: resnet18
+  method: span
+  metric: rank1
+  value_pct: 76.9872
+  tolerance_pp: 1.39

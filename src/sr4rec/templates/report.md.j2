@@ -1,0 +1,125 @@
+{#- SR4Rec report template. Every report has the same sections in the same order. -#}
+{%- macro table(header, align, rows) -%}
+| {{ header | join(" | ") }} |
+|{% for a in align %}{{ "---:" if a == "r" else "---" }}|{% endfor %}
+{% for r in rows -%}
+| {{ r | join(" | ") }} |
+{% endfor -%}
+{%- endmacro -%}
+# SR4Rec Report: `{{ dataset_name }}`
+
+> **Question.** Does placing a super-resolution (SR) model in front of the recognizer
+> improve accuracy on this dataset, compared with plain bicubic upscaling?
+>
+> **Answer.** {{ answer }}
+
+{{ table(["Run", "SR4Rec", "Finished", "Total time"], "llll", [run_row]) }}
+## 1. Summary
+
+{% if summary_rows -%}
+{{ table(["Backbone", "Best SR", "Δ vs bicubic (pp)", "Verdict"], "llrl", summary_rows) }}
+{%- else -%}
+No SR model was configured, so there is nothing to compare with bicubic.
+{% endif %}
+## 2. Setup
+
+{{ table(["Item", "Value"], "ll", setup_rows) }}
+**SR models**
+
+{{ table(["Name", "Scale", "Trained for", "Source", "File", "SHA-256"], "lrllll", sr_rows) }}
+## 3. Main results
+
+Rank-1 accuracy (the primary metric) is the mean ± standard deviation over {{ n_seeds_text }}.
+Δ, 95% CI and p compare each SR model with bicubic on the same {{ n_test }} test images.
+"Same sign" counts the seeds whose Δ has the same sign as the mean Δ.
+
+{{ table(["Backbone", "SR", "Rank-1 (%)", "Δ vs bicubic (pp)", "95% CI (pp)", "p (Holm)", "Same sign", "Verdict"], "llrrlrrl", main_rows) }}
+## 4. Rank-5, CMC, precision, recall and F1
+
+![CMC curves](plots/cmc.png)
+
+Precision, recall and F1 are macro-averaged over classes; mean ± standard deviation over {{ n_seeds_text }}.
+These metrics are descriptive: the statistical test and the verdict use Rank-1 accuracy, the primary metric.
+{%- if rank5_na %}
+Rank-5 is n/a because the dataset has fewer than 5 classes.
+{%- endif %}
+
+{{ table(["Backbone", "SR", "Rank-1 (%)", "Rank-5 (%)", "Precision (%)", "Recall (%)", "F1 (%)"], "llrrrrr", secondary_rows) }}
+## 5. Results by image size
+
+Size bins use the short side of the LR image given to the SR model.
+Test images per bin: {{ bin_counts }}.
+
+![Accuracy by LR image size](plots/accuracy_by_size.png)
+
+{% if size_rows -%}
+{{ table(["Backbone", "SR"] + bin_headers, "llllll", size_rows) }}
+Cells show Δ vs bicubic in pp and the verdict. The number in brackets is the count of test
+images in a bin with fewer than {{ min_bin }} images.
+{%- else -%}
+No SR model was configured.
+{%- endif %}
+
+## 6. Image quality vs recognition
+
+{% if synthetic -%}
+![PSNR and SSIM vs accuracy](plots/quality_vs_accuracy.png)
+
+{{ table(["SR", "PSNR (dB)", "SSIM", "Rank-1, " ~ first_backbone ~ " (%)", "F1, " ~ first_backbone ~ " (%)"], "lrrrr", quality_rows) }}
+{{ quality_summary }}
+{%- else -%}
+n/a (no HR reference in native-lr mode)
+{%- endif %}
+
+## 7. CPU latency
+
+{% if latency_enabled -%}
+Batch 1, LR input {{ lr_size }} × {{ lr_size }}, {{ threads }} threads, {{ cpu }} (median / p95, ms).
+
+{{ table(latency_header, latency_align, latency_rows) }}
+Recognizer only: {{ recognizer_latency }}.
+{%- else -%}
+Not measured (`latency.enabled: false`).
+{%- endif %}
+
+## 8. Visual comparisons
+
+{% if comparisons -%}
+{{ comparisons_text }} All panels:
+`comparisons/`.{% if comparison_images %} {{ "Two examples" if comparison_images | length > 1 else "One example" }}:
+
+{% for f in comparison_images -%}
+![Comparison {{ loop.index }}](comparisons/{{ f }})
+{% endfor -%}
+{%- endif %}
+{%- else -%}
+Not exported (`comparisons.enabled: false`).
+{%- endif %}
+
+## 9. Warnings and notes
+
+{% for w in warnings -%}
+- {{ w }}
+{% endfor %}
+## 10. How to read this report
+
+- **Δ vs bicubic (pp):** Rank-1 accuracy of the SR model minus that of bicubic, in percentage points.
+- **95% CI:** range that contains the true Δ with 95% confidence (bootstrap over test images).
+- **p (Holm):** probability of a Δ this large if the SR model and bicubic were equivalent,
+  corrected for comparing several SR models (Holm, per backbone).
+- **Verdict:** ▲ significant gain, ▼ significant harm, ● no difference
+  (rules: docs/report_guide.md).
+- **Rank-1 / Rank-5:** the true identity is the top prediction / among the top 5 predictions.
+  CMC shows Rank-k for k = 1 to 10.
+- **Same sign:** in how many seeds the difference with bicubic points the same way.
+- **Precision, recall, F1:** macro averages over classes (every class counts equally).
+  Recall equals accuracy computed per class and then averaged.
+- **PSNR / SSIM:** image similarity between the SR output and the HR image
+  (Y channel, border of `scale` pixels removed); synthetic mode only.
+- **HR (upper bound):** accuracy on the original high-resolution test images; synthetic mode only.
+
+## 11. Reproducibility
+
+Configuration: `sr4rec.yaml`. Environment, data hash and weight hashes: `fingerprint.yaml`.
+Re-run: `sr4rec run {{ rerun_path }}`
+Re-grade without training (published demos only): `sr4rec reproduce <demo> --eval-only`

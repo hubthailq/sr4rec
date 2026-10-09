@@ -1,0 +1,223 @@
+{
+  "_comment": "Published recognizer checkpoints for `sr4rec reproduce <demo> --eval-only`. Filled in at release time by scripts/export_checkpoints.py; each file entry has name, url and sha256.",
+  "demos": {
+    "d1_earvn": [
+      {
+        "name": "resnet18__bicubic__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__bicubic__seed0.pt",
+        "sha256": "42af002c751f2189c2eb5607bb8274e46a2e906c50c43fe422c0c846af43e07f"
+      },
+      {
+        "name": "resnet18__bicubic__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__bicubic__seed1.pt",
+        "sha256": "be82d8fbd98c5d6b0ead96ce8e5b13e975e9c2f1b401c012d3a4f0576ee19330"
+      },
+      {
+        "name": "resnet18__bicubic__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__bicubic__seed2.pt",
+        "sha256": "6cfdd5f159c3c349b150cfec0de413ed9dfc1f61ab80dd3053751bea88aa7fc8"
+      },
+      {
+        "name": "resnet18__realesrgan__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__realesrgan__seed0.pt",
+        "sha256": "0dd2908e4d2672cfa4c44d07aa5b385c587f106c4a32553e09829d0dda474671"
+      },
+      {
+        "name": "resnet18__realesrgan__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__realesrgan__seed1.pt",
+        "sha256": "960cbe6f6c712934458db2f161f4a3a2c575147d0df8863a75c9ffec4afefc70"
+      },
+      {
+        "name": "resnet18__realesrgan__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__realesrgan__seed2.pt",
+        "sha256": "d2804499e61fb53d4892ca30d0c59b196b910fc09eaed39d78958adcb26f0266"
+      },
+      {
+        "name": "resnet18__swinir_classical__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__swinir_classical__seed0.pt",
+        "sha256": "0a4ee44591780dd9eed85a8914f8e9e4286490c5cf6ef8d60db6ff2d27beb34b"
+      },
+      {
+        "name": "resnet18__swinir_classical__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__swinir_classical__seed1.pt",
+        "sha256": "f6e940cc742f7c1bdd8a587d7abcc61d4673d6827fb39811cda86f1c01068ea5"
+      },
+      {
+        "name": "resnet18__swinir_classical__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__swinir_classical__seed2.pt",
+        "sha256": "0bfdd33d6a6da3fe572942bb97a31b2f08b4eed95b0f4cc953441e580ca700f0"
+      },
+      {
+        "name": "resnet18__swinir_realworld__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__swinir_realworld__seed0.pt",
+        "sha256": "5a93a43da3a46b8c378a108dd1cabb1830074a166a52725ffe949e89d0170676"
+      },
+      {
+        "name": "resnet18__swinir_realworld__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__swinir_realworld__seed1.pt",
+        "sha256": "e2b726b39d636a3ca6dae72c6a1e6bcfd0ca67cf57f164d499a36ef2c5cc9599"
+      },
+      {
+        "name": "resnet18__swinir_realworld__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__swinir_realworld__seed2.pt",
+        "sha256": "bc20efbdf206037dd0f58657f8ad9c6d45f22dcc07cdb4d79a71d74fd108d943"
+      },
+      {
+        "name": "resnet18__span__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__span__seed0.pt",
+        "sha256": "d120793e91ef708ba9dc4791937f47b6010645c928248fb068f193e24e27bcb8"
+      },
+      {
+        "name": "resnet18__span__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__span__seed1.pt",
+        "sha256": "68d8dd950ee48f8bea03a14337869b0a707e1d9a8cdd7b203170d0800afbbe1f"
+      },
+      {
+        "name": "resnet18__span__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn__resnet18__span__seed2.pt",
+        "sha256": "00a2d5618b28a73dcb3b4bd7a3242f54b2cceb4ba49e8dc8ccdc374e54ec217f"
+      }
+    ],
+    "d1_earvn_fixed": [
+      {
+        "name": "resnet18__bicubic__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn_fixed__resnet18__bicubic__seed0.pt",
+        "sha256": "42af002c751f2189c2eb5607bb8274e46a2e906c50c43fe422c0c846af43e07f"
+      },
+      {
+        "name": "resnet18__bicubic__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn_fixed__resnet18__bicubic__seed1.pt",
+        "sha256": "be82d8fbd98c5d6b0ead96ce8e5b13e975e9c2f1b401c012d3a4f0576ee19330"
+      },
+      {
+        "name": "resnet18__bicubic__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d1_earvn_fixed__resnet18__bicubic__seed2.pt",
+        "sha256": "6cfdd5f159c3c349b150cfec0de413ed9dfc1f61ab80dd3053751bea88aa7fc8"
+      }
+    ],
+    "d2_lfw": [
+      {
+        "name": "resnet18__bicubic__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__bicubic__seed0.pt",
+        "sha256": "da28079bc1f375cd500d5fcaf65fe2c0eecff2a03c4f851d07ea37b344ae7cfd"
+      },
+      {
+        "name": "resnet18__bicubic__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__bicubic__seed1.pt",
+        "sha256": "3e85d4f86c785df6553eeb77a2393d9e68de21184be792fd093747d022d2ca9a"
+      },
+      {
+        "name": "resnet18__bicubic__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__bicubic__seed2.pt",
+        "sha256": "31e0a05171e99b88dfd72570ca9f22d371465138ff3ee1dab5510ee41a358d40"
+      },
+      {
+        "name": "resnet18__realesrgan__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__realesrgan__seed0.pt",
+        "sha256": "478abde0b7c49659f4f2ce89816ea2493c63d7e34a423f9b712ce549064258e0"
+      },
+      {
+        "name": "resnet18__realesrgan__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__realesrgan__seed1.pt",
+        "sha256": "463d8a8327f26aed857864c6e3132b637b2e25bf7426bbca286b8b40bc8cfe0e"
+      },
+      {
+        "name": "resnet18__realesrgan__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__realesrgan__seed2.pt",
+        "sha256": "d9ba9d1a215f3591bb266dc1440c722081707348c2d27b4987f89b4554f68635"
+      },
+      {
+        "name": "resnet18__swinir_classical__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__swinir_classical__seed0.pt",
+        "sha256": "2cf208960a9b5d7ac1cf30c6ed45c3deb596aad9e4300cc68138a4d843ee70b4"
+      },
+      {
+        "name": "resnet18__swinir_classical__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__swinir_classical__seed1.pt",
+        "sha256": "2422b31297dd292f0f04b06745d47147cac6a39d2c3c42d424e307dfea9f9dc0"
+      },
+      {
+        "name": "resnet18__swinir_classical__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__swinir_classical__seed2.pt",
+        "sha256": "848314da6033958231da4db732ae28a6b07286169dddd758869177b87e5c4122"
+      },
+      {
+        "name": "resnet18__swinir_realworld__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__swinir_realworld__seed0.pt",
+        "sha256": "565d9221df502204606cf9e6058c1686248acfd094905e91b37382b5bbbb8981"
+      },
+      {
+        "name": "resnet18__swinir_realworld__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__swinir_realworld__seed1.pt",
+        "sha256": "0e73632da72b9f1a713a52e06081ce2ce88f62e3f7e4469f96ba31cd1360889e"
+      },
+      {
+        "name": "resnet18__swinir_realworld__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__swinir_realworld__seed2.pt",
+        "sha256": "38639554bcde3b820210ed2b40f2b235ed142d105ff522fe248bf02a91ccc85f"
+      },
+      {
+        "name": "resnet18__span__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__span__seed0.pt",
+        "sha256": "ee3e7b62dd015811ce3739136e9303fe07be596beddc040d7b06af05d53b725e"
+      },
+      {
+        "name": "resnet18__span__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__span__seed1.pt",
+        "sha256": "a0a4cdcb660107fddf81d2e49c4e639e73ede290588f27b90202628d0819f127"
+      },
+      {
+        "name": "resnet18__span__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__span__seed2.pt",
+        "sha256": "38760b906469261d311c712772be67f960c1f332ab3bf7acc6c8cea1d11132a5"
+      },
+      {
+        "name": "resnet18__hr__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__hr__seed0.pt",
+        "sha256": "5e4b493c337869f69a3cf8c7197ec70a67c90525c6df77a7a7c52f2fe52b71a7"
+      },
+      {
+        "name": "resnet18__hr__seed1.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__hr__seed1.pt",
+        "sha256": "62752b912c7866c00456db4a8daba494ff2a945401a90b11161d4b38896a9730"
+      },
+      {
+        "name": "resnet18__hr__seed2.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d2_lfw__resnet18__hr__seed2.pt",
+        "sha256": "eaa178bd48cb76a816d70ff5ec9bd12fd53e326e8e3d08b30f3ea27354f7f0cf"
+      }
+    ],
+    "d3_cub": [
+      {
+        "name": "resnet18__bicubic__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d3_cub__resnet18__bicubic__seed0.pt",
+        "sha256": "f9df013d200e738dca642dd554a37c9f87749044b04944c44ae8b09ff0ea9cfc"
+      },
+      {
+        "name": "resnet18__realesrgan__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d3_cub__resnet18__realesrgan__seed0.pt",
+        "sha256": "d9c40e7579a04ef66fe0393f7c07381904af9b202bd237475cd1041fab61c9bc"
+      },
+      {
+        "name": "resnet18__swinir_classical__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d3_cub__resnet18__swinir_classical__seed0.pt",
+        "sha256": "0ba27f96ad040848d554f41f7b90970b9153b5ac771dfcf0af22a1b160a70179"
+      },
+      {
+        "name": "resnet18__swinir_realworld__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d3_cub__resnet18__swinir_realworld__seed0.pt",
+        "sha256": "838268e7ad695120f59bab39e91e211497874fbe724c09945c91948d1af0fc2f"
+      },
+      {
+        "name": "resnet18__span__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d3_cub__resnet18__span__seed0.pt",
+        "sha256": "1392d626d43cae8676d11c57a87781a86be0a9aee25b237978a8dbb1b2697e22"
+      },
+      {
+        "name": "resnet18__hr__seed0.pt",
+        "url": "https://github.com/hubthailq/sr4rec/releases/download/v0.1.0/d3_cub__resnet18__hr__seed0.pt",
+        "sha256": "e87eb69ca62a0e768ce423e33db3635c10d006d24fb705b031f9b1c83695a9e7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+# Example 04: protocol fixed_recognizer, the cheap screening protocol. One recognizer per backbone
+# and seed is trained on HR images; only the test images pass through SR. Compare with example 01.
+# Run from the repository root:
+#   sr4rec run examples/configs/04_fixed_recognizer.yaml
+# Expected time: about 3 minutes on a laptop CPU.
+# Before the first run (once):
+#   python scripts/make_examples.py --pets <path_to_oxford_iiit_pet>   # builds examples/data/pets_mini
+#   python examples/sr_models/train_tiny_espcn.py                      # trains the example SR weights
+dataset: ../data/pets_mini
+mode: synthetic
+scale: 4
+protocol: fixed_recognizer
+sr:
+  - name: tiny_espcn
+    module: ../sr_models/tiny_espcn.py:TinyESPCN
+    weights: ../sr_models/tiny_espcn_x4_pets.pth
+recognizer:
+  backbones: [resnet18]
+  input_size: 128
+  seeds: [0]
+training:
+  epochs: 3
+  batch_size: 32
+  num_workers: 0
+latency:
+  lr_size: 64
+  threads: 2
+comparisons:
+  count: 6
+runtime:
+  output_dir: ../../runs

@@ -1,0 +1,30 @@
+# Example 03: images that are already low resolution (mode: native-lr), analysed by image size.
+# Run from the repository root:
+#   sr4rec run examples/configs/03_native_lr.yaml
+# Expected time: about 5 minutes on a laptop CPU.
+# Prepare first (the EarVN1.0 subset is rebuilt from your own copy of the dataset):
+#   python scripts/make_examples.py --earvn <path_to_EarVN1.0>
+#   python examples/sr_models/train_tiny_espcn.py
+dataset: ../data/earvn_mini
+mode: native-lr
+scale: 4
+protocol: matched
+sr:
+  - name: tiny_espcn
+    module: ../sr_models/tiny_espcn.py:TinyESPCN
+    weights: ../sr_models/tiny_espcn_x4_pets.pth
+recognizer:
+  backbones: [resnet18]
+  input_size: 128
+  seeds: [0]
+training:
+  epochs: 3
+  batch_size: 32
+  num_workers: 0
+latency:
+  lr_size: 64
+  threads: 2
+comparisons:
+  count: 6
+runtime:
+  output_dir: ../../runs

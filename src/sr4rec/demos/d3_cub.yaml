@@ -1,0 +1,29 @@
+# SR4Rec demo definition: d3_cub
+demo: d3_cub
+description: 'D3 (other domain, single run): CUB-200-2011 birds, official split, synthetic x4, ResNet-18, seed 0'
+defaults:
+  data_root: data
+  weights_root: weights
+notes: python scripts/prepare_cub.py --cub <path_to_CUB_200_2011> --out data/cub. Put the four validated SR weight
+  files in the weights folder (docs/adding_sr_models.md).
+config:
+  dataset: '{data_root}/cub'
+  mode: synthetic
+  scale: 4
+  protocol: matched
+  sr:
+  - name: realesrgan
+    weights: '{weights_root}/RealESRGAN_x4plus.pth'
+  - name: swinir_classical
+    weights: '{weights_root}/001_classicalSR_DIV2K_s48w8_SwinIR-M_x4.pth'
+  - name: swinir_realworld
+    weights: '{weights_root}/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth'
+  - name: span
+    weights: '{weights_root}/spanx4_ch48.pth'
+  recognizer:
+    backbones:
+    - resnet18
+    seeds:
+    - 0
+  latency:
+    enabled: false

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use SR4Rec, please cite it as below."
+title: "SR4Rec: A reproducible toolkit for measuring whether super-resolution helps closed-set image recognition"
+type: software
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/hubthailq/sr4rec"
+doi: 
+authors:
+  - given-names: Thai
+    family-names: Le Quang
+    orcid: https://orcid.org/0009-0006-6427-2162
+  - given-names: Vinh
+    family-names: Truong Hoang
+    orcid: https://orcid.org/0000-0002-3464-3894
+keywords:
+  - super-resolution
+  - image recognition
+  - biometrics
+  - evaluation
+  - reproducibility

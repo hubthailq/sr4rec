@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [--fix]
+  - repo: local
+    hooks:
+      - id: config-docs
+        name: Configuration docs up to date
+        entry: python scripts/make_config_docs.py
+        language: system
+        pass_filenames: false
+        files: ^src/sr4rec/config

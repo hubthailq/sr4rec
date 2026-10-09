@@ -1,0 +1,30 @@
+# SR4Rec demo definition: d1_earvn_fixed
+demo: d1_earvn_fixed
+description: D1 with protocol fixed_recognizer (protocol comparison)
+defaults:
+  data_root: data
+  weights_root: weights
+notes: As d1_earvn.
+config:
+  dataset: '{data_root}/earvn'
+  mode: native-lr
+  scale: 4
+  protocol: fixed_recognizer
+  sr:
+  - name: realesrgan
+    weights: '{weights_root}/RealESRGAN_x4plus.pth'
+  - name: swinir_classical
+    weights: '{weights_root}/001_classicalSR_DIV2K_s48w8_SwinIR-M_x4.pth'
+  - name: swinir_realworld
+    weights: '{weights_root}/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth'
+  - name: span
+    weights: '{weights_root}/spanx4_ch48.pth'
+  recognizer:
+    backbones:
+    - resnet18
+    seeds:
+    - 0
+    - 1
+    - 2
+  latency:
+    enabled: false

@@ -1,0 +1,34 @@
+# Expected results of demo d2_lfw, frozen from reproduce_d2_lfw.
+demo: d2_lfw
+frozen: true
+metrics:
+- backbone: resnet18
+  method: bicubic
+  metric: rank1
+  value_pct: 90.3654
+  tolerance_pp: 6.85
+- backbone: resnet18
+  method: realesrgan
+  metric: rank1
+  value_pct: 89.4795
+  tolerance_pp: 3.67
+- backbone: resnet18
+  method: swinir_classical
+  metric: rank1
+  value_pct: 91.1406
+  tolerance_pp: 4.3
+- backbone: resnet18
+  method: swinir_realworld
+  metric: rank1
+  value_pct: 90.0332
+  tolerance_pp: 3.49
+- backbone: resnet18
+  method: span
+  metric: rank1
+  value_pct: 90.9192
+  tolerance_pp: 5.49
+- backbone: resnet18
+  method: hr
+  metric: rank1
+  value_pct: 92.9125
+  tolerance_pp: 4.99

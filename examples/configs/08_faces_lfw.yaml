@@ -1,0 +1,33 @@
+# Example 08: face identity recognition on an LFW subset (synthetic mode).
+# Privacy: face images are biometric data. SR4Rec ships no face image; you build the subset from
+# your own copy of LFW and must follow the terms of the dataset and the data-protection rules that
+# apply to you. Use it for research only.
+# Prepare first:
+#   python scripts/make_examples.py --lfw <path_to_lfw>
+#   python examples/sr_models/train_tiny_espcn.py
+# Run from the repository root:
+#   sr4rec run examples/configs/08_faces_lfw.yaml
+# Expected time: about 5 minutes on a laptop CPU.
+dataset: ../data/lfw_mini
+mode: synthetic
+scale: 4
+protocol: matched
+sr:
+  - name: tiny_espcn
+    module: ../sr_models/tiny_espcn.py:TinyESPCN
+    weights: ../sr_models/tiny_espcn_x4_pets.pth
+recognizer:
+  backbones: [resnet18]
+  input_size: 128
+  seeds: [0]
+training:
+  epochs: 3
+  batch_size: 32
+  num_workers: 0
+latency:
+  lr_size: 64
+  threads: 2
+comparisons:
+  count: 6
+runtime:
+  output_dir: ../../runs

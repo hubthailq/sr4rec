@@ -1,0 +1,9 @@
+# Expected results of demo quickstart, frozen from reproduce_quickstart.
+# One entry per backbone and method, with value_pct = mean Rank-1 (%) over seeds and
+# tolerance_pp = max(0.2, 3 x sd over seeds).
+demo: quickstart
+frozen: true
+metrics:
+- {backbone: resnet18, method: bicubic, metric: rank1, value_pct: 32.0, tolerance_pp: 0.2}
+- {backbone: resnet18, method: tiny_espcn, metric: rank1, value_pct: 30.0, tolerance_pp: 0.2}
+- {backbone: resnet18, method: hr, metric: rank1, value_pct: 29.0, tolerance_pp: 0.2}

@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install "ruff>=0.4,<0.17"
+      - run: ruff check .
+
+  test:
+    needs: lint
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.10", "3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - name: Install (CPU PyTorch)
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[dev]"
+      - name: Configuration docs are up to date
+        run: |
+          python scripts/make_config_docs.py
+          git diff --exit-code docs/config_reference.md examples/configs/full_reference.yaml
+      - name: Tests
+        run: pytest --cov=sr4rec --cov-report=term-missing
+
+  examples:
+    # Runs the sample configurations when the sample subsets are available in the cache
+    # (built once by a maintainer with scripts/make_examples.py).
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache/restore@v4
+        id: samples
+        with:
+          path: examples/data
+          key: sr4rec-sample-data-v1
+      - name: Install
+        if: steps.samples.outputs.cache-hit == 'true'
+        run: |
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install -e .
+      - name: Quickstart and examples
+        if: steps.samples.outputs.cache-hit == 'true'
+        run: |
+          python examples/sr_models/train_tiny_espcn.py
+          for c in 01_quickstart 03_native_lr 04_fixed_recognizer 05_split_ratios 06_sr_module; do
+            sr4rec run examples/configs/$c.yaml --dry-run
+            sr4rec run examples/configs/$c.yaml
+          done

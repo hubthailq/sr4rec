@@ -1,0 +1,29 @@
+# Example 07: SR images produced outside SR4Rec (method 3).
+# Run from the repository root, after any pets_mini run (for example example 01), which writes the
+# LR images to runs/<run_name>/lr/:
+#   python examples/sr_images/make_sr_images.py --run runs/<run_name> --out examples/sr_images/lanczos
+#   sr4rec run examples/configs/07_sr_images.yaml --dry-run
+#   sr4rec run examples/configs/07_sr_images.yaml
+# Expected time: about 5 minutes on a laptop CPU.
+dataset: ../data/pets_mini
+mode: synthetic
+scale: 4
+protocol: matched
+sr:
+  - name: lanczos
+    images: ../sr_images/lanczos/
+recognizer:
+  backbones: [resnet18]
+  input_size: 128
+  seeds: [0]
+training:
+  epochs: 3
+  batch_size: 32
+  num_workers: 0
+latency:
+  lr_size: 64
+  threads: 2
+comparisons:
+  count: 6
+runtime:
+  output_dir: ../../runs
