@@ -5,7 +5,7 @@ import os as _os
 # Operators that the Apple GPU backend does not implement run on the CPU instead of failing.
 _os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = ["__version__", "Run", "load_config"]
 

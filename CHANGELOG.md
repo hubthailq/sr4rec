@@ -5,6 +5,11 @@ the configuration format; every change is listed here, and old configurations fa
 message instead of being read differently. Report numbers only change between versions when this
 file says so.
 
+## [0.1.1] - 2026-10-15
+
+### Changed
+- The author list now includes Dzi Lam Tran Tuan. Commands and frozen results are unchanged.
+
 ## [0.1.0] - 2026-10-10
 
 ### Added

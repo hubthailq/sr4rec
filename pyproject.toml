@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sr4rec"
-version = "0.1.0"
+version = "0.1.1"
 description = "A reproducible toolkit for measuring whether super-resolution helps closed-set image recognition"
 readme = "README.md"
 license = { text = "MIT" }

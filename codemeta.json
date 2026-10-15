@@ -3,7 +3,7 @@
   "@type": "SoftwareSourceCode",
   "name": "SR4Rec",
   "description": "A reproducible toolkit for measuring whether super-resolution helps closed-set image recognition, compared with bicubic upscaling.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/hubthailq/sr4rec",
   "programmingLanguage": "Python",
@@ -13,6 +13,7 @@
   "keywords": ["super-resolution", "image recognition", "biometrics", "evaluation", "reproducibility"],
   "author": [
     {"@type": "Person", "givenName": "Thai", "familyName": "Le Quang", "@id": "https://orcid.org/0009-0006-6427-2162"},
+    {"@type": "Person", "givenName": "Dzi", "familyName": "Lam Tran Tuan"},
     {"@type": "Person", "givenName": "Vinh", "familyName": "Truong Hoang", "@id": "https://orcid.org/0000-0002-3464-3894"}
   ]
 }

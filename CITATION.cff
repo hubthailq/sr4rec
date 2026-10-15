@@ -2,14 +2,17 @@ cff-version: 1.2.0
 message: "If you use SR4Rec, please cite it as below."
 title: "SR4Rec: A reproducible toolkit for measuring whether super-resolution helps closed-set image recognition"
 type: software
-version: 0.1.0
+version: 0.1.1
 license: MIT
 repository-code: "https://github.com/hubthailq/sr4rec"
-doi: 
+doi: 10.5281/zenodo.23401553
+
 authors:
   - given-names: Thai
     family-names: Le Quang
     orcid: https://orcid.org/0009-0006-6427-2162
+  - given-names: Dzi
+    family-names: Lam Tran Tuan
   - given-names: Vinh
     family-names: Truong Hoang
     orcid: https://orcid.org/0000-0002-3464-3894
