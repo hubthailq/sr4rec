@@ -257,8 +257,7 @@ sr4rec reproduce d1_earvn                        # level 2: full re-training on 
 ```
 
 `sr4rec reproduce <demo>` needs that demo's dataset and SR weights locally. Without them it exits
-with code 3 and writes the demo configuration to `runs/<demo>_config.yaml`, which you can then run
-with `sr4rec run`.
+with code 3 and lists what is missing.
 
 `sr4rec reproduce quickstart` needs no downloaded checkpoints, only the `pets_mini` dataset and
 the example SR weights, built once ([Quick start](#3-quick-start)):
@@ -266,7 +265,9 @@ the example SR weights, built once ([Quick start](#3-quick-start)):
 python scripts/make_examples.py --pets <path_to_oxford_iiit_pet>
 python examples/sr_models/train_tiny_espcn.py
 ```
-After that it retrains on the spot in about 5 minutes on a laptop CPU.
+After that it retrains on the spot in about 5 minutes on a laptop CPU. Its expected values were
+frozen on the reference machine. With 100 test images, one changed prediction moves Rank-1 by 1 pp,
+so on other hardware the demo can exit with code 2 even when the software works correctly.
 
 Exit codes: **0** within tolerance, **2** outside tolerance, **3** missing data/weights/checkpoints,
 **1** any other error. Reference hardware: [docs/reference_environment.md](docs/reference_environment.md).
@@ -296,7 +297,7 @@ If you use SR4Rec, please cite the software (see [CITATION.cff](CITATION.cff)):
   title   = {SR4Rec: A reproducible toolkit for measuring whether super-resolution helps closed-set image recognition},
   author  = {Le Quang, Thai and Lam Tran Tuan, Dzi and Truong Hoang, Vinh},
   year    = {2026},
-  version = {0.1.1},
+  version = {0.1.2},
   url     = {https://github.com/hubthailq/sr4rec},
   doi     = {10.5281/zenodo.23401553}
 }

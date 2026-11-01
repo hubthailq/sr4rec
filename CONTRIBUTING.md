@@ -29,9 +29,9 @@ pull request with a small experiment.
 
 1. The weights are publicly downloadable from the authors, with a license that allows research use.
 2. spandrel loads them (method 1); otherwise provide a method-2 module under `examples/`.
-3. The output of SR4Rec matches the authors' inference script on 20 images (mean absolute
-   difference below 1/255); for bicubic-degradation models, PSNR on Set5 and Set14 (Y channel,
-   border = scale) is within 0.05 dB of the paper.
+3. `sr4rec run <config> --dry-run` passes. For bicubic-degradation models with published results,
+   PSNR on Set5 and Set14 (Y channel, border = scale) is within 0.05 dB of the paper; check it with
+   `scripts/check_sr_fidelity.py`.
 4. Add the SHA-256, file name and degradation type to `src/sr4rec/sr/validated.py`, the README and
    `docs/adding_sr_models.md`.
 

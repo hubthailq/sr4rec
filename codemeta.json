@@ -3,7 +3,7 @@
   "@type": "SoftwareSourceCode",
   "name": "SR4Rec",
   "description": "A reproducible toolkit for measuring whether super-resolution helps closed-set image recognition, compared with bicubic upscaling.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/hubthailq/sr4rec",
   "programmingLanguage": "Python",

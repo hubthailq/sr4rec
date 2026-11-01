@@ -452,7 +452,8 @@ class Run:
             raise SRModelError(f"{text}\n\nDry run failed. Details:\n{details}")
         total, todo, n_sr = self._plan()
         rec = cfg.recognizer
-        pipes = f"{len(self.methods)} image pipelines (bicubic + {len(self.methods) - 1} SR)"
+        n_pipes = len(self.methods)
+        pipes = f"{n_pipes} image pipeline{'s' if n_pipes != 1 else ''} (bicubic + {n_pipes - 1} SR)"
         if self.synthetic:
             pipes += " + HR"
         lines.append(f"Plan                protocol {cfg.protocol}: {pipes}, {len(rec.backbones)} backbone(s), "

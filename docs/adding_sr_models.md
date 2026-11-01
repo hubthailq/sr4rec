@@ -82,10 +82,11 @@ file and of the weights are written to `fingerprint.yaml`.
 
 ## Validated SR models
 
-These weight files have been checked against the authors' own inference script and, for
-bicubic-degradation models, against the PSNR reported in their paper (criteria and process in
-`CONTRIBUTING.md`); SR4Rec labels their training degradation automatically by file hash. Any other
-SR model still works (see the three methods above); it is shown as "unknown" instead.
+SR4Rec recognizes these weight files by SHA-256 and labels their training degradation in the report.
+The two bicubic-degradation models were also checked against the PSNR reported in their papers with
+`scripts/check_sr_fidelity.py`. The two real-world models have no published PSNR to compare with, so
+this check does not cover them (criteria in `CONTRIBUTING.md`). Any other SR model still works (see
+the three methods above); its degradation is shown as "unknown".
 
 | Model | File | Trained for | SHA-256 |
 |---|---|---|---|

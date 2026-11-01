@@ -5,6 +5,24 @@ the configuration format; every change is listed here, and old configurations fa
 message instead of being read differently. Report numbers only change between versions when this
 file says so.
 
+## [0.1.2] - 2026-11-01
+
+### Added
+- `scripts/check_sr_fidelity.py`, which compares the SwinIR classical and SPAN weights with their
+  published PSNR on Set5 and Set14.
+- `Licence.txt`, a copy of `LICENSE`.
+
+### Changed
+- The documentation now describes how the SR weights were checked, the terms of the published
+  checkpoints, the NVIDIA driver of the reference machine and the role of `requirements.lock`.
+- The README states that the quickstart demo can report a mismatch outside the reference machine.
+
+### Fixed
+- The README no longer says that `sr4rec reproduce` writes a configuration when inputs are missing.
+- `--dry-run` no longer prints "1 image pipelines".
+
+Commands, methods and frozen results are unchanged.
+
 ## [0.1.1] - 2026-10-15
 
 ### Changed

@@ -33,8 +33,13 @@ license (ResNet-18, MobileNetV3-Small and ConvNeXt-Tiny are released under Apach
 
 ## Recognizer checkpoints (published for `--eval-only`)
 
-Checkpoints trained on a dataset inherit the terms of that dataset. They are published only for
-datasets whose terms allow it; `scripts/checkpoints_manifest.json` lists what is available.
+`scripts/checkpoints_manifest.json` lists the published checkpoints. They contain model weights
+only, no images, and are provided for research use and for checking the published results. They
+give no rights to the datasets they were trained on, whose terms still apply.
+
+- **EarVN1.0:** published with the permission of the dataset author, who is a co-author of SR4Rec.
+- **LFW:** the official page states no license, and the data are biometric.
+- **CUB-200-2011:** the dataset is for research use, and its images belong to their photographers.
 
 ## Code adapted from other projects
 
