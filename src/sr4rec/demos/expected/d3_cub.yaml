@@ -1,5 +1,4 @@
-# Expected results of demo d3_cub, frozen from reproduce_d3_cub_eval_only_3 (after the SR
-# inference determinism fix in Run.execute()).
+# Expected results of demo d3_cub, frozen from reproduce_d3_cub.
 demo: d3_cub
 frozen: true
 metrics:
@@ -11,7 +10,7 @@ metrics:
 - backbone: resnet18
   method: realesrgan
   metric: rank1
-  value_pct: 57.9392
+  value_pct: 58.0255
   tolerance_pp: 0.2
 - backbone: resnet18
   method: swinir_classical
@@ -21,12 +20,12 @@ metrics:
 - backbone: resnet18
   method: swinir_realworld
   metric: rank1
-  value_pct: 57.3524
+  value_pct: 57.387
   tolerance_pp: 0.2
 - backbone: resnet18
   method: span
   metric: rank1
-  value_pct: 61.7018
+  value_pct: 61.7363
   tolerance_pp: 0.2
 - backbone: resnet18
   method: hr

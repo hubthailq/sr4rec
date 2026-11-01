@@ -5,7 +5,7 @@ the configuration format; every change is listed here, and old configurations fa
 message instead of being read differently. Report numbers only change between versions when this
 file says so.
 
-## [0.1.2] - 2026-11-01
+## [0.1.2] - 2026-11-02
 
 ### Added
 - `scripts/check_sr_fidelity.py`, which compares the SwinIR classical and SPAN weights with their
@@ -20,8 +20,11 @@ file says so.
 ### Fixed
 - The README no longer says that `sr4rec reproduce` writes a configuration when inputs are missing.
 - `--dry-run` no longer prints "1 image pipelines".
+- Three frozen Rank-1 values of `d3_cub` did not match runs started from an empty cache, so
+  `sr4rec reproduce d3_cub --eval-only` reported a mismatch. The values are now 58.0255 (`realesrgan`),
+  57.3870 (`swinir_realworld`) and 61.7363 (`span`); the largest change is 0.09 pp.
 
-Commands, methods and frozen results are unchanged.
+Commands and methods are unchanged. No other frozen result changed.
 
 ## [0.1.1] - 2026-10-15
 

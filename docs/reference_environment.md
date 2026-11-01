@@ -10,7 +10,7 @@ below. `fingerprint.yaml` of each run records the same fields, so any run can be
 | Operating system | Ubuntu 24.04.1 LTS |
 | NVIDIA driver | 590.48.01 |
 | Python / PyTorch / CUDA | Python 3.12.3, PyTorch 2.11.0, CUDA 13.0 |
-| SR4Rec | 0.1.0 (the frozen results have not changed since) |
+| SR4Rec | 0.1.0 (since then, only three `d3_cub` values have changed, in 0.1.2; see `CHANGELOG.md`) |
 
 Tolerances: full re-training `max(0.2 pp, 3 x sd over seeds)` per backbone and method;
 `--eval-only` 0.01 pp (four decimals of the accuracy on the same type of hardware).
