@@ -299,7 +299,7 @@ If you use SR4Rec, please cite the software (see [CITATION.cff](CITATION.cff)):
   year    = {2026},
   version = {0.1.2},
   url     = {https://github.com/hubthailq/sr4rec},
-  doi     = {10.5281/zenodo.23401553}
+  doi     = {10.5281/zenodo.23878729}
 }
 ```
 
